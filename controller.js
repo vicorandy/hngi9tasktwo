@@ -26,6 +26,7 @@ function performOperation(req, res) {
     subtraction: (x, y) => x - y,
     minus: (x, y) => x - y,
     multiplication: (x, y) => x * y,
+    times: (x, y) => x * y,
     multiply: (x, y) => x * y,
     division: (x, y) => x / y,
     divide: (x, y) => x / y,

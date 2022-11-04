@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  },
+  "name": "hngi9_task_one",
+  "description": "## \\_A basic API that sends back a json object with some of my hng infomation and perform basic aretimatic operation",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "16.13.0"
+  },
+  "author": "Victor",
+  "license": "ISC"
+}

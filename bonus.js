@@ -65,11 +65,49 @@ function bonusPoint(string) {
 
   if (subtract) {
     result = operator[sign](numbers[1], numbers[0]);
-    return result;
+    return { result, sign };
   } else {
     result = operator[sign](numbers[0], numbers[1]);
-    return result;
+    return { result, sign };
   }
 }
 
-module.exports = bonusPoint;
+const checker = function (operation_type) {
+  if (
+    operation_type === "add" ||
+    operation_type === "sum" ||
+    operation_type === "addition" ||
+    operation_type === "added" ||
+    operation_type === "+"
+  ) {
+    return "addition";
+  }
+  if (
+    operation_type === "subtraction" ||
+    operation_type === "minus" ||
+    operation_type === "subtracted" ||
+    operation_type === "subtract" ||
+    operation_type === "-"
+  ) {
+    return "substraction";
+  }
+  if (
+    operation_type === "multiplication" ||
+    operation_type === "times" ||
+    operation_type === "multiply" ||
+    operation_type === "*"
+  ) {
+    return "multiplication";
+  }
+  if (
+    operation_type === "divide" ||
+    operation_type === "division" ||
+    operation_type === "divided" ||
+    operation_type === "over" ||
+    operation_type === "/"
+  ) {
+    return "division";
+  }
+};
+
+module.exports = { bonusPoint, checker };

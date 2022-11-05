@@ -1,4 +1,4 @@
-const bonusPoint = require("./bonus.js");
+const { bonusPoint, checker } = require("./bonus.js");
 
 function sendInternInfo(req, res) {
   res.status(200);
@@ -37,14 +37,16 @@ function performOperation(req, res) {
   }
   if (operation_type in operator && string === 1) {
     const result = operation(operation_type, x, y);
+    const sign = checker(operation_type);
     res.status(200);
-    res.json({ slackUsername: "code_vic", result, operation_type });
+    res.json({ slackUsername: "@code_vic", result, operation_type: sign });
     return;
   }
   if (string > 1) {
-    const result = bonusPoint(operation_type);
+    const { result, sign } = bonusPoint(operation_type);
+    const data = checker(sign[0]);
     res.status(200);
-    res.json({ slackUsername: "code_vic", result, operation_type });
+    res.json({ slackUsername: "@code_vic", result, operation_type: data });
     return;
   } else {
     res.status(400);

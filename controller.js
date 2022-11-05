@@ -1,3 +1,4 @@
+//main
 const { bonusPoint, checker } = require("./bonus.js");
 
 function sendInternInfo(req, res) {

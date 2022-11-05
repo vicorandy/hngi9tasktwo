@@ -89,7 +89,7 @@ const checker = function (operation_type) {
     operation_type === "subtract" ||
     operation_type === "-"
   ) {
-    return "substraction";
+    return "subtraction";
   }
   if (
     operation_type === "multiplication" ||
